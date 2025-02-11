@@ -40,7 +40,7 @@ jobs:
           minor_pattern: "(minor-${{ inputs.MODULE_TYPE }}-${{ inputs.MODULE_NAME }})"
           change_path: "my-terraform-mono-repo/modules/${{ inputs.MODULE_TYPE }}/${{ inputs.MODULE_NAME }}"
           namespace: "${{ inputs.MODULE_TYPE }}-${{ inputs.MODULE_NAME }}"
-          bump_each_commit: true
+          bump_each_commit: false
 
       - name: Output version
         run: echo "${{ steps.tag.outputs.version }}"

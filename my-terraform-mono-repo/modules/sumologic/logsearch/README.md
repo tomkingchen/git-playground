@@ -7,3 +7,5 @@ Logsearch module based on Terraform sumologic_logsearch resource.
 Go figure yourself!
 
 First commit
+
+Commit after 0.0.3
