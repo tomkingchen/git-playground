@@ -1,0 +1,52 @@
+name: Publish LogSearch Module
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'my-terraform-mono-repo/modules/**'
+
+permissions:
+  id-token: write
+  contents: write
+
+jobs:
+  create-release-tags:
+    name: Create Semantic Releases
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Config git creds
+        run: |
+          git config --global user.email "$(git --no-pager log --format=format:'%ae' -n 1)"
+          git config --global user.name "$(git --no-pager log --format=format:'%an' -n 1)"
+
+      - name: Tag modules
+        id: tag
+        uses: paulhatch/semantic-version@v5.4.0
+        with:
+          tag_prefix: ""
+          major_pattern: "(major)"
+          minor_pattern: "(minor)"
+          change_path: "my-terraform-mono-repo/modules"
+          namespace: "my-modules"
+          bump_each_commit: false
+
+      - name: Output version
+        run: echo "${{ steps.tag.outputs.version }}"
+        shell: bash
+
+      - name: Tag repo
+        id: tag-repo
+        run: |
+          if git rev-parse ${{ steps.tag.outputs.version }} >/dev/null 2>&1; then
+            echo "Tag already exists, skipping tagging."
+          else
+            git tag -a ${{ steps.tag.outputs.version }} -m "Release ${{ steps.tag.outputs.version }}"
+            git push origin ${{ steps.tag.outputs.version }}
+          fi
