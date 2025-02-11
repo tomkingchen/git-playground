@@ -15,3 +15,5 @@ Commit after disable `bump on each commit`
 Last commit before push
 
 Commit after gha change to tag whole package
+
+Add a very major feature here to logsearch module after version 0.0.10
