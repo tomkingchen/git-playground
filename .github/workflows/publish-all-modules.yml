@@ -34,7 +34,6 @@ jobs:
           major_pattern: "(major)"
           minor_pattern: "(minor)"
           change_path: "my-terraform-mono-repo/modules"
-          namespace: "my-modules"
           bump_each_commit: false
 
       - name: Output version
