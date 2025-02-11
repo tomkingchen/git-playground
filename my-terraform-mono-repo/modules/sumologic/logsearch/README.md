@@ -9,3 +9,5 @@ Go figure yourself!
 First commit
 
 Commit after 0.0.3
+
+Commit after disable `bump on each commit`
