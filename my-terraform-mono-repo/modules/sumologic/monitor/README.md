@@ -17,3 +17,5 @@ Last commit before push
 Commit after gha change to tag whole package
 
 Commit after last commit 👆
+
+Fix some bugs after 0.0.10
