@@ -7,3 +7,5 @@ Sumo Logic monitor module based on Terraform sumologic_monitor resource.
 I don't know 🤷🏽‍♂️
 
 First Commit
+
+Second Commit
