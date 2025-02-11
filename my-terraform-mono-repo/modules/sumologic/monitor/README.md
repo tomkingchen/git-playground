@@ -11,3 +11,5 @@ First Commit
 Second Commit
 
 Commit after 0.0.4
+
+Last commit before push
