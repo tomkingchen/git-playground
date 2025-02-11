@@ -13,3 +13,5 @@ Second Commit
 Commit after 0.0.4
 
 Last commit before push
+
+Commit after gha change to tag whole package
