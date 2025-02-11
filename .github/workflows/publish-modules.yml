@@ -17,12 +17,10 @@ permissions:
   contents: write
 
 jobs:
-
   create-release-tags:
     name: Create Semantic Releases
-    runs-on: [ubuntu, linux, x64]
+    runs-on: ubuntu-latest
     steps:
-
       - name: Checkout
         uses: actions/checkout@v4
         with:
