@@ -38,7 +38,7 @@ jobs:
           tag_prefix: ""
           major_pattern: "(major-${{ inputs.MODULE_TYPE }}-${{ inputs.MODULE_NAME }})"
           minor_pattern: "(minor-${{ inputs.MODULE_TYPE }}-${{ inputs.MODULE_NAME }})"
-          change_path: "tools/${{ inputs.MODULE_TYPE }}/${{ inputs.MODULE_NAME }}"
+          change_path: "my-terraform-mono-repo/modules/${{ inputs.MODULE_TYPE }}/${{ inputs.MODULE_NAME }}"
           namespace: "${{ inputs.MODULE_TYPE }}-${{ inputs.MODULE_NAME }}"
           bump_each_commit: true
 
